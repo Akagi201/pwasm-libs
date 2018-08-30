@@ -1,0 +1,9 @@
+[package]
+name = "bitcoin"
+version = "0.1.0"
+authors = ["Akagi201 <akagi201@gmail.com>"]
+
+[dependencies]
+arrayref = "~0.3"
+byteorder = "~1.2"
+rust-crypto = "~0.2"
