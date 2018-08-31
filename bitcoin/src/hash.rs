@@ -1,22 +1,24 @@
-use crypto::digest::Digest;
-use crypto::sha2::Sha256;
+use sha2::{Digest, Sha256};
 
 #[derive(PartialEq, Eq, Debug, Copy, Clone, Default, Ord, PartialOrd)]
 pub struct Hash([u8; 32]);
 
 impl Hash {
   pub fn from_data(data: &[u8]) -> Hash {
-    let mut out = [0u8; 32];
-    let mut hasher1 = Sha256::new();
-    let mut hasher2 = hasher1;
+    let mut hasher1 = Sha256::default();
+    let mut hasher2 = Sha256::default();
 
     hasher1.input(data);
-    hasher1.result(&mut out);
+    let out = hasher1.result();
 
     hasher2.input(&out);
-    hasher2.result(&mut out);
+    let out = hasher2.result();
 
-    Hash(out)
+    let slice = out.as_slice();
+    let mut a: [u8; 32] = [0u8; 32];
+    a.copy_from_slice(&slice);
+
+    Hash(a)
   }
 
   pub fn from_slice(slice: &[u8; 32]) -> Hash {

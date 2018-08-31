@@ -1,4 +1,4 @@
-pub use byteorder::{ByteOrder, LittleEndian, ReadBytesExt};
+pub use byteorder::{ByteOrder, LittleEndian};
 use hash::Hash;
 
 #[derive(Clone, Copy)]
@@ -14,8 +14,8 @@ impl<'a> BlockHeader<'a> {
   }
 
   pub fn version(&self) -> i32 {
-    let mut slice = &self.0[0..];
-    slice.read_i32::<LittleEndian>().unwrap()
+    let slice = &self.0[0..];
+    LittleEndian::read_i32(slice)
   }
 
   pub fn cur_hash(&self) -> Hash {
@@ -31,17 +31,17 @@ impl<'a> BlockHeader<'a> {
   }
 
   pub fn timestamp(&self) -> u32 {
-    let mut slice = &self.0[68..];
-    slice.read_u32::<LittleEndian>().unwrap()
+    let slice = &self.0[68..];
+    LittleEndian::read_u32(slice)
   }
 
   pub fn bits(&self) -> u32 {
-    let mut slice = &self.0[72..];
-    slice.read_u32::<LittleEndian>().unwrap()
+    let slice = &self.0[72..];
+    LittleEndian::read_u32(slice)
   }
 
   pub fn nonce(&self) -> u32 {
-    let mut slice = &self.0[76..];
-    slice.read_u32::<LittleEndian>().unwrap()
+    let slice = &self.0[76..];
+    LittleEndian::read_u32(slice)
   }
 }
