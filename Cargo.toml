@@ -4,8 +4,11 @@ version = "0.1.0"
 authors = ["Akagi201 <akagi201@gmail.com>"]
 license = "MIT/Apache-2.0"
 readme = "README.md"
+repository = "https://github.com/Akagi201/pwasm-libs"
+homepage = "https://github.com/Akagi201/pwasm-libs"
 description = "Collection of libraries for pwasm contract and pwasm-compatible executables"
-keywords = ["wasm", "webassembly", "pwasm", "no-std"]
+keywords = ["wasm", "webassembly", "pwasm", "blockchain"]
+categories = ["no-std", "embedded"]
 
 [workspace]
 members = [
