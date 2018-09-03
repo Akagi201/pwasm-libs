@@ -1,5 +1,5 @@
 [package]
-name = "pwasm-utils"
+name = "pwasm-libs"
 version = "0.1.0"
 authors = ["Akagi201 <akagi201@gmail.com>"]
 license = "MIT/Apache-2.0"
@@ -12,7 +12,7 @@ categories = ["no-std", "embedded"]
 
 [workspace]
 members = [
-  "bitcoin-parser"
+  "bitcoin-parser",
 ]
 
 [badges]
