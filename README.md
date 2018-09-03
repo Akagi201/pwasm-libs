@@ -3,4 +3,4 @@
 Collection of modules related to contract but no_std.
 
 ## libs
-* [bitcoin](/bitcoin): bitcoin header parser.
+* [bitcoin-parser](/bitcoin-parser): bitcoin header parser.
