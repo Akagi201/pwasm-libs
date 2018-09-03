@@ -1,5 +1,6 @@
 use sha2::{Digest, Sha256};
 
+/// A structure that represents the bitcoin Sha256 Hash
 #[derive(PartialEq, Eq, Debug, Copy, Clone, Default, Ord, PartialOrd)]
 pub struct Hash([u8; 32]);
 

@@ -1,6 +1,7 @@
 pub use byteorder::{ByteOrder, LittleEndian};
 use hash::Hash;
 
+/// A structure that represents the bitcoin block header
 #[derive(Clone, Copy)]
 pub struct BlockHeader<'a>(&'a [u8; 80]);
 

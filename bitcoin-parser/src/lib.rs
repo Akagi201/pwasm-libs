@@ -1,3 +1,5 @@
+//! An implementation of the parser of the bitcoin block header.
+
 #![warn(unused_extern_crates)]
 #![no_std]
 
